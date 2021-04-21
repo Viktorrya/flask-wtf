@@ -10,6 +10,21 @@ def index(title):
     return render_template('base.html', **param)
 
 
+@app.route('/answer')
+@app.route('/auto_answer')
+def answer():
+    param = {}
+    param['title'] = 'title'
+    param['surname'] = 'Watny'
+    param['name'] = 'Mark'
+    param['education'] = 'выше среднего'
+    param['profession'] = "штурман марсохода"
+    param['sex'] = "male"
+    param['motivation'] = "Всегда мечтал"
+    param['ready'] = "ДА"
+    return render_template('auto_answer.html', **param)
+
+
 @app.route('/training/<prof>')
 def training_prof(prof):
     return render_template('training.html', prof=prof)
