@@ -25,6 +25,12 @@ def answer():
     return render_template('auto_answer.html', **param)
 
 
+@app.route('/distribution')
+def distribution():
+    astronauts = ['Ридли Скотт', "Энди Уир", "Марк Уотни"]
+    return render_template('cabins.html', astrs=astronauts)
+
+
 @app.route('/training/<prof>')
 def training_prof(prof):
     return render_template('training.html', prof=prof)
